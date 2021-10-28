@@ -58,7 +58,7 @@ int isEmpty()
 
 void push()
 {
-	struct node *newNode, *temp;
+	struct node *newNode;
 	newNode = (struct node*)(malloc(sizeof(struct node)));
 	printf("\n Enter element : ");
 	scanf_s("%d", &newNode->data);
@@ -69,19 +69,17 @@ void push()
 	}
 	else
 	{
-		temp = TOS;
-		while (temp->next != NULL)
-			temp = temp->next;
-		temp->next = newNode;
+		newNode->next = TOS;
+		TOS = newNode;
 	}
 	printf("Node Inserted");
 }
 
+
+
 void pop()
 {
-	struct node *ptr, *prevNodePtr;
-	ptr = TOS;
-	prevNodePtr = ptr;
+	struct node *ptr;
 	if (isEmpty())
 	{
 		printf("List is Empty");
@@ -89,12 +87,8 @@ void pop()
 	}
 	else
 	{
-		while (ptr->next != NULL)
-		{
-			prevNodePtr = ptr;
-			ptr = ptr->next;
-		}
-		prevNodePtr->next = NULL;
+		ptr = TOS;
+		TOS = TOS->next;
 		free(ptr);
 	}
 	printf("Node Deleted");
@@ -110,16 +104,9 @@ void peek()
 	}
 	else
 	{
-		printf("\nStack: ");
-		ptr = TOS;
-		while (ptr->next != NULL)
-		{
-			ptr = ptr->next;
-		}
+		printf("TOP element : %d", TOS->data);
 	}
-	printf("TOS element : %d", ptr->data);
 }
-
 void display()
 {
 	struct node *ptr;
