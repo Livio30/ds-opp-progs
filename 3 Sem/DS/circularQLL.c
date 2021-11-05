@@ -70,8 +70,8 @@ void enqueue()
 	if (front == NULL)
 	{
 		front = newNode;
-		rear = newNode;
 		newNode->next = front;
+		rear = newNode;
 	}
 	else
 	{
@@ -90,13 +90,19 @@ void dequeue()
 		printf("Queue Empty");
 		return;
 	}
-
+	else if (front == rear)
+	{
+		temp = front;
+		front = rear = NULL;
+		free(temp);
+	}
+	else {
 	temp = front;
 
 	front = front->next;
 	rear->next = front;
 	free(temp);
-
+	}
 	printf("\n Element Deleted");
 }
 
