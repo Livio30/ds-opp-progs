@@ -1,0 +1,17 @@
+101 Lollipop 150 n
+102 Lollipop(Gravy) 160 n
+103 French Fries 100 v
+104 Veg Crispy 120 v
+101 Lollipop 250 n
+102 Crispy Chicken 250 n
+103 French Fries 200 v
+104 Veg Crispy 120 v
+201 Veg Fried Rice 190 1
+202 Chicken Fried Rice 230 1
+203 Veg Pulav 220 1
+204 Butter Chicken 280 1
+301 Ice-Cream 60 
+302 Fruit Salad 130 
+401 Water 40 1000
+402 Soft-Drinks 40 300
+403 Fruit Juice 120 300
